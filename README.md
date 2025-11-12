@@ -1,43 +1,78 @@
-# BlueBuild Template &nbsp; [![bluebuild build badge](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
+# Bluearchy &nbsp; [![bluebuild build badge](https://github.com/denongio/bluearchy/actions/workflows/build.yml/badge.svg)](https://github.com/denongio/bluearchy/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+**Bluearchy** is not just a distro.  
+It is an **opinionated Universal Blue** fork, forged in the shadow of Omarchy’s vision.  
+It fuses **Hyprland**, Omarchy’s signature aesthetics, and **Vicinae** — replacing Omarchy’s launcher entirely for a faster, more modern experience.  
 
-After setup, it is recommended you update this README to describe your custom image.
+Minimal. Dark. Relentless. Atomic.
+
+---
 
 ## Installation
 
 > [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+> This is experimental territory. If you step here, do so knowingly.
 
-To rebase an existing atomic Fedora installation to the latest build:
+Rebase an existing Fedora Atomic system to Bluearchy:
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/blue-build/template:latest
-  ```
-- Reboot to complete the rebase:
-  ```
-  systemctl reboot
-  ```
-- Then rebase to the signed image, like so:
-  ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/blue-build/template:latest
-  ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
-  ```
+1. Rebase to the unsigned image first — this primes the system with the necessary keys and policies:
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/denongio/bluearchy:latest
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+csharp
+Copy code
+2. Reboot into the new shadow:
+systemctl reboot
+
+arduino
+Copy code
+3. Rebase to the signed image to lock in authenticity:
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/denongio/bluearchy:latest
+
+css
+Copy code
+4. Reboot once more to complete your transformation:
+systemctl reboot
+
+yaml
+Copy code
+
+> The `latest` tag always points to the newest build, but the Fedora base remains anchored in `recipe.yml`.  
+> Progress without compromise.
+
+---
 
 ## ISO
 
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+Generate an offline ISO from a Fedora Atomic system following  
+[Universal Blue instructions](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso).
+
+> ⚠️ GitHub cannot host these ISOs due to size. Public projects require external hosting.
+
+---
+
+## Vicinae Launcher
+
+Bluearchy **replaces Omarchy’s launcher with Vicinae** for a faster, cleaner, and more extensible experience.  
+Vicinae maintains the minimalist aesthetic while adding modern features for navigation, search, and workspace management.
+
+---
 
 ## Verification
 
-These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
+Every image is signed with [Sigstore](https://www.sigstore.dev/) via [cosign](https://github.com/sigstore/cosign).  
 
-```bash
-cosign verify --key cosign.pub ghcr.io/blue-build/template
-```
+Verify your build with:
+cosign verify --key cosign.pub ghcr.io/denongio/bluearchy
+
+yaml
+Copy code
+
+---
+
+### Description
+> Opinionated Universal Blue distro, inspired by **Omarchy** — Hyprland, Omarchy aesthetics, and **Vicinae** (replacing Omarchy’s launcher) included.  
+> Minimal, dark, and unapologetically atomic.
+
+---
+
+Made with 🖤 by [denongio](https://github.com/denongio)
