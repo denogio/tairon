@@ -18,7 +18,7 @@ Rebase an existing Fedora Atomic system to Bluearchy:
 1. Rebase to the unsigned image first — this primes the system with the necessary keys and policies:
 
 ```
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/denongio/bluearchy:latest
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/denogio/bluearchy:latest
 ```
 
 2. Reboot into the new shadow:
@@ -30,7 +30,7 @@ systemctl reboot
 3. Rebase to the signed image to lock in authenticity:
 
 ```
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/denongio/bluearchy:latest
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/denogio/bluearchy:latest
 ```
 
 4. Reboot once more to complete your transformation:
@@ -68,7 +68,7 @@ All images are signed with [Sigstore](https://www.sigstore.dev/) via [cosign](ht
 Verify your build with:
 
 ```
-cosign verify --key cosign.pub ghcr.io/denongio/bluearchy
+cosign verify --key cosign.pub ghcr.io/denogio/bluearchy
 ```
 
 ---
@@ -79,4 +79,4 @@ cosign verify --key cosign.pub ghcr.io/denongio/bluearchy
 
 ---
 
-Made with 🖤 by [denongio](https://github.com/denongio)
+Made with 🖤 by [denogio](https://github.com/denogio)
