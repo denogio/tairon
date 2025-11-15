@@ -21,11 +21,13 @@ modules:
         copr:
           enable:
             - washkinazy/wayland-wm-extras
+            - erikreider/SwayNotificationCenter
       install:
         install-weak-deps: false
         packages:
         - swayosd
         - waypaper
+        - gtk4-layer-shell
 
     - type: files
       files:
