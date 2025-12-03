@@ -15,11 +15,21 @@ modules:
         - hyprpaper
         - hyprlock
         - hypridle
+		- hyprpolkitagent
         - hyprland-guiutils
-        - hyprsysteminfo
-		- hyprpolkitagent        
         - hyprshot
         - jetbrains-mono-fonts
+
+    - type: dnf
+      repos:
+        copr:
+          enable:
+		    - sdegler/hyprland
+
+	  install:
+        install-weak-deps: false
+        packages:
+        - hyprsysteminfo
 
     - type: dnf
       repos:
