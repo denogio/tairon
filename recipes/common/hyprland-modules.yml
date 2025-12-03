@@ -1,49 +1,49 @@
 modules:
-    - type: dnf
-      repos:
-        copr:
-          enable:
-            - lionheartp/Hyprland
-            - scottames/ghostty
-      install:
-        install-weak-deps: false
-        packages:
-        - ghostty
-        - hyprland
-        - waybar
-        - xdg-desktop-portal-hyprland
-        - hyprpaper
-        - hyprlock
-        - hypridle
-	    - hyprpolkitagent
-        - hyprland-guiutils
-        - hyprshot
-        - jetbrains-mono-fonts
+  - type: dnf
+    repos:
+      copr:
+        enable:
+          - lionheartp/Hyprland
+          - scottames/ghostty
+    install:
+      install-weak-deps: false
+      packages:
+      - ghostty
+      - hyprland
+      - waybar
+      - xdg-desktop-portal-hyprland
+      - hyprpaper
+      - hyprlock
+      - hypridle
+      - hyprpolkitagent
+      - hyprland-guiutils
+      - hyprshot
+      - jetbrains-mono-fonts
 
-    - type: dnf
-      repos:
-        copr:
-          enable:
-		    - sdegler/hyprland
-	  install:
+  - type: dnf
+    repos:
+      copr:
+        enable:
+        - sdegler/hyprland
+      install:
         install-weak-deps: false
         packages:
         - hyprsysteminfo
 
-    - type: dnf
-      repos:
-        copr:
-          enable:
-            - washkinazy/wayland-wm-extras
-            - erikreider/SwayNotificationCenter
-      install:
-        install-weak-deps: false
-        packages:
-        - swayosd
-        - waypaper
-        - gtk4-layer-shell
+  - type: dnf
+    repos:
+      copr:
+        enable:
+          - washkinazy/wayland-wm-extras
+          - erikreider/SwayNotificationCenter
+    install:
+      install-weak-deps: false
+      packages:
+      - swayosd
+      - waypaper
+      - gtk4-layer-shell
 
-    - type: files
-      files:
-        - source: system/hyprland
-          destination: /
+  - type: files
+    files:
+      - source: system/hyprland
+        destination: /
