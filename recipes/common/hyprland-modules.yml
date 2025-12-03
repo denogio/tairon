@@ -8,7 +8,6 @@ modules:
       install:
         install-weak-deps: false
         packages:
-        - alacritty
         - ghostty
         - hyprland
         - waybar
