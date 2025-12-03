@@ -16,6 +16,8 @@ modules:
         - hyprlock
         - hypridle
         - hyprland-guiutils
+        - hyprsysteminfo
+		- hyprpolkitagent        
         - hyprshot
         - jetbrains-mono-fonts
 
