@@ -16,7 +16,7 @@ modules:
         - hyprpaper
         - hyprlock
         - hypridle
-        - hyprland-qtutils
+        - hyprland-guiutils
         - hyprshot
         - jetbrains-mono-fonts
 
