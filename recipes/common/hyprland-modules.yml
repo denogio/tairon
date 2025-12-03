@@ -5,7 +5,6 @@ modules:
           enable:
             - lionheartp/Hyprland
             - scottames/ghostty
-            - scottames/vicinae
       install:
         install-weak-deps: false
         packages:
@@ -20,7 +19,6 @@ modules:
         - hyprland-qtutils
         - hyprshot
         - jetbrains-mono-fonts
-        - vicinae
 
     - type: dnf
       repos:
