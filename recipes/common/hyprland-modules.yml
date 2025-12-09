@@ -19,6 +19,7 @@ modules:
       - hyprland-guiutils
       - hyprshot
       - jetbrains-mono-fonts
+      - uwsm
 
   - type: dnf
     repos:
