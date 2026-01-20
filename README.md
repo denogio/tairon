@@ -1,5 +1,8 @@
 # Bluearchy &nbsp; [![bluebuild build badge](https://github.com/denogio/bluearchy/actions/workflows/build.yml/badge.svg)](https://github.com/denogio/bluearchy/actions/workflows/build.yml)
 
+<img width="957" height="208" alt="bluearchy-logo" src="https://github.com/user-attachments/assets/151be3c9-0241-4979-85cf-e82820855d35" />
+
+
 **Bluearchy** is not just a distro.
 It is an **opinionated Universal Blue** fork, forged in the shadow of Omarchy’s vision.
 It fuses **Hyprland**, Omarchy’s signature aesthetics, and **Vicinae** — replacing Omarchy’s launcher entirely for a faster, cleaner, and more modern experience.
