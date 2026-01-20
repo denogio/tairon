@@ -12,7 +12,6 @@ image-version: 43 # latest is also supported if you want new updates ASAP
 # Definer stadiet her
 stages:
   - from-file: stages/cargo-builder.yml
-    name: cargo-stage
 
 modules:
   - from-file: common/sddm-modules.yml
