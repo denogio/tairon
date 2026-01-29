@@ -28,7 +28,7 @@ echo ""
 mkdir -p "$HOME/.config/tairon"
 
 # Step 1: Developer tools
-if gum confirm "Install developer tools? (ripgrep, fd, bat, eza, starship, lazygit, zoxide)" --default=true; then
+if gum confirm "Install developer tools? (ripgrep, fd, bat, eza, starship, lazygit, zoxide, VSCode, Antigravity)" --default=true; then
     if ! command -v brew &> /dev/null; then
         gum style --foreground 196 "⚠️  Homebrew not found!"
         echo ""
@@ -37,7 +37,12 @@ if gum confirm "Install developer tools? (ripgrep, fd, bat, eza, starship, lazyg
         exit 1
     fi
 
-    gum spin --spinner dot --title "Installing developer tools..." -- brew install ripgrep fd-find bat eza starship lazygit zoxide
+    gum spin --spinner dot --title "Installing developer tools..." -- bash -c "
+        brew tap ublue-os/tap 2>/dev/null || true
+        brew install ripgrep fd-find bat eza starship lazygit zoxide
+        brew install --cask ublue-os/tap/visual-studio-code-linux
+        brew install --cask ublue-os/tap/antigravity-linux
+    "
 
     gum style --foreground 46 "✓ Developer tools installed"
 

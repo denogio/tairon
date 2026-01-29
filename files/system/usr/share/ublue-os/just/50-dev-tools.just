@@ -15,8 +15,15 @@ dev-tools:
 
     echo "Installing developer tools..."
 
+    # Ensure ublue-os tap is available
+    brew tap ublue-os/tap 2>/dev/null || true
+
     # Core tools
     brew install ripgrep fd-find bat eza starship lazygit zoxide
+
+    # IDE & Tools from ublue-os tap
+    brew install --cask ublue-os/tap/visual-studio-code-linux
+    brew install --cask ublue-os/tap/antigravity-linux
 
     echo "Developer tools installed!"
     echo "Run 'just dev-setup' to configure them."
@@ -124,14 +131,15 @@ dev-info:
     echo "starship: $(starship --version 2>/dev/null || echo 'Not installed')"
     echo "lazygit: $(lazygit --version 2>/dev/null || echo 'Not installed')"
     echo "zoxide: $(zoxide --version 2>/dev/null || echo 'Not installed')"
+    echo ""
+    echo "IDEs & Tools:"
+    echo "  VSCode: $(code --version 2>/dev/null || echo 'Not installed')"
+    echo "  Antigravity: $(antigravity --version 2>/dev/null || echo 'Not installed')"
 
 # Update all developer tools
 dev-update:
     brew upgrade
-
-# Clean up old developer tool versions
-dev-clean:
-    brew cleanup
+    brew upgrade --cask
 
 # Create developer-focused project template
 dev-new project:
