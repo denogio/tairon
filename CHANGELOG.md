@@ -7,7 +7,7 @@ All notable changes to Tairon will be documented in this file.
 ### Added
 - Initial release as Tairon (renamed from Bluearchy)
 - Full Vicinae integration with custom configuration
-- Developer tools: ripgrep, fd, bat, eza, starship, lazygit, zoxide (via Homebrew)
+- Developer tools: ripgrep, fd, bat, eza, starship, lazygit, zoxide (via Homebrew, managed by blue-build)
 - Vicinae dmenu system controls (power, display, network, system info)
 - JetBrains Mono fonts (already included)
 - Enhanced justfile with developer commands
@@ -23,6 +23,7 @@ All notable changes to Tairon will be documented in this file.
 ### Changed
 - Renamed from Bluearchy to Tairon
 - Updated container registry to ghcr.io/denogio/tairon
+- Homebrew installation now handled by blue-build (removed manual installation)
 - Enhanced Vicinae configuration with developer-focused settings
 - Improved Waybar styling
 - Better error handling in setup scripts
