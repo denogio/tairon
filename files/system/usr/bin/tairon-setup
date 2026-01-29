@@ -27,6 +27,19 @@ echo ""
 # Create config directory
 mkdir -p "$HOME/.config/tairon"
 
+# Step 0: Install Tairon scripts
+if ! command -v tairon-menu &> /dev/null; then
+    if gum confirm "Install Tairon system scripts? (Essential utilities)" --default=true; then
+        gum spin --spinner dot --title "Installing Tairon scripts..." -- tairon-install-scripts
+        gum style --foreground 46 "✓ Tairon scripts installed"
+    else
+        gum style --foreground 196 "⚠️  Tairon scripts skipped"
+        gum style --foreground 244 "You can install later with: tairon-install-scripts"
+    fi
+else
+    gum style --foreground 244 "✓ Tairon scripts already installed"
+fi
+
 # Step 1: Developer tools
 if gum confirm "Install developer tools? (ripgrep, fd, bat, eza, starship, lazygit, zoxide, VSCode, Antigravity)" --default=true; then
     if ! command -v brew &> /dev/null; then
@@ -149,10 +162,10 @@ gum style \
 
 # Show quick reference
 gum style --foreground 212 "Quick Start Commands:"
-gum style --foreground 226 "  - just dev-info     : Show installed dev tools"
-gum style --foreground 226 "  - just dev-setup    : Reconfigure dev tools"
-gum style --foreground 226 "  - tairon-update     : Update system"
-gum style --foreground 226 "  - just              : Show all available commands"
+gum style --foreground 226 "  - just dev-info      : Show installed dev tools"
+gum style --foreground 226 "  - just dev-setup     : Reconfigure dev tools"
+gum style --foreground 226 "  - tairon-update-scripts  : Update Tairon scripts"
+gum style --foreground 226 "  - just               : Show all available commands"
 echo ""
 gum style --foreground 212 "Keyboard Shortcuts:"
 gum style --foreground 226 "  - SUPER+R         : Open Vicinae launcher"
