@@ -2,11 +2,11 @@
 # Tairon backup utility using gum for beautiful UX
 set -euo pipefail
 
-BACKUP_DIR="$HOME/.config/tairon/backups"
+BACKUP_DIR="${HOME}/.config/tairon/backups"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-BACKUP_FILE="$BACKUP_DIR/tairon-backup-$TIMESTAMP.tar.gz"
+BACKUP_FILE="${BACKUP_DIR}/tairon-backup-${TIMESTAMP}.tar.gz"
 
-mkdir -p "$BACKUP_DIR"
+mkdir -p "${BACKUP_DIR}"
 
 # Show backup header
 gum style \
@@ -30,22 +30,22 @@ gum style --foreground 244 "  - User applications (~/.local/share/applications)"
 echo ""
 
 # Create backup
-gum spin --spinner dot --title "Creating backup..." -- tar -czf "$BACKUP_FILE" \
-    "$HOME/.config/hypr" \
-    "$HOME/.config/waybar" \
-    "$HOME/.config/vicinae" \
-    "$HOME/.config/nvim" \
-    "$HOME/.config/ghostty" \
-    "$HOME/.config/starship.toml" \
-    "$HOME/.bashrc" \
-    "$HOME/.local/share/applications" 2>/dev/null || true
+gum spin --spinner dot --title "Creating backup..." -- tar -czf "${BACKUP_FILE}" \
+    "${HOME}/.config/hypr" \
+    "${HOME}/.config/waybar" \
+    "${HOME}/.config/vicinae" \
+    "${HOME}/.config/nvim" \
+    "${HOME}/.config/ghostty" \
+    "${HOME}/.config/starship.toml" \
+    "${HOME}/.bashrc" \
+    "${HOME}/.local/share/applications" 2>/dev/null || true
 
 # Show success
 gum style --foreground 46 "✓ Backup created!"
 echo ""
-gum style --foreground 220 "Location: $BACKUP_FILE"
+gum style --foreground 220 "Location: ${BACKUP_FILE}"
 echo ""
 
 # Show backup size
-SIZE=$(du -h "$BACKUP_FILE" | cut -f1)
-gum style --foreground 244 "Size: $SIZE"
+SIZE=$(du -h "${BACKUP_FILE}" | cut -f1)
+gum style --foreground 244 "Size: ${SIZE}"

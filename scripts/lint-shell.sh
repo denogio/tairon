@@ -5,8 +5,9 @@ set -euo pipefail
 echo "🔍 Running ShellCheck on Tairon scripts..."
 echo "=========================================="
 
-# Find all shell scripts (exclude git, node_modules, scripts, and inspiration directories)
-SCRIPTS=$(find . -name "*.sh" -not -path "./.git/*" -not -path "./node_modules/*" -not -path "./scripts/*" -not -path "./.inspiration/*")
+# Find all shell scripts by checking file type (exclude git, node_modules, scripts, and inspiration directories)
+# This catches both .sh files and shell scripts without extensions (like tairon-*)
+SCRIPTS=$(find . -type f -not -path "./.git/*" -not -path "./node_modules/*" -not -path "./scripts/*" -not -path "./.inspiration/*" -exec file {} \; | grep -i "shell script" | cut -d: -f1)
 
 # Run shellcheck on each script
 ISSUES_FOUND=0

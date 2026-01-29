@@ -8,25 +8,25 @@ command -v gum &> /dev/null || {
     echo "gum not found, using basic output"
 }
 
-TARGET_DIR="$HOME/.local/bin"
+TARGET_DIR="${HOME}/.local/bin"
 SOURCE_DIR="/usr/lib/tairon-scripts"
 
 gum style --foreground 212 "Updating Tairon scripts..."
 echo ""
 
 # Ensure target directory exists
-mkdir -p "$TARGET_DIR"
+mkdir -p "${TARGET_DIR}"
 
 # Update all scripts
-gum spin --spinner dot --title "Updating Tairon scripts..." -- cp -f -r "$SOURCE_DIR"/* "$TARGET_DIR/"
+gum spin --spinner dot --title "Updating Tairon scripts..." -- cp -f -r "${SOURCE_DIR}"/* "${TARGET_DIR}/"
 
 # Make them executable
-chmod +x "$TARGET_DIR"/tairon-*
+chmod +x "${TARGET_DIR}"/tairon-*
 
 # Show what was updated
-UPDATED_COUNT=$(ls "$TARGET_DIR"/tairon-* 2>/dev/null | wc -l)
+UPDATED_COUNT=$(find "${TARGET_DIR}" -maxdepth 1 -name "tairon-*" -type f 2>/dev/null | wc -l)
 
-gum style --foreground 46 "✓ Updated $UPDATED_COUNT Tairon scripts"
+gum style --foreground 46 "✓ Updated ${UPDATED_COUNT} Tairon scripts"
 
 echo ""
 gum style --foreground 212 "Tairon utilities updated!"

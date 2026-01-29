@@ -28,16 +28,16 @@ if [ ${#BROWSERS[@]} -eq 0 ]; then
 fi
 
 for browser in "${BROWSERS[@]}"; do
-  BROWSERS_MENU+="$browser"
+  BROWSERS_MENU+="${browser}"
 done
 
 selected=$(echo "${BROWSERS_MENU[@]}" | vicinae dmenu -p "Select browser" --no-section --no-metadata 2>/dev/null)
 
-case "$selected" in
+case "${selected}" in
   *Firefox:firefox*) exec firefox "$@" ;;
   *Firefox*)
     exec flatpak run org.mozilla.firefox "$@" ;;
   *Chromium:chromium*) exec chromium "$@" ;;
   *Vivaldi:vivaldi-stable*) exec vivaldi "$@" ;;
-  *) notify-send "Browser not found" "$selected"; exit 1 ;;
+  *) notify-send "Browser not found" "${selected}"; exit 1 ;;
 esac
